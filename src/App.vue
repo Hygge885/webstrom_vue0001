@@ -31,12 +31,17 @@
     <p>{{ schoolName }}</p>
     <button @click="start">开始</button>
     <button @click="stop">停止</button>
+
+    <!-- 新增：父子组件通信示例 -->
+    <hr>
+    <Father />
   </div>
 </template>
 
 <script setup>
 import Son1 from '@/components/Son1.vue'
 import Son2 from '@/components/Son2.vue'
+import Father from '@/Father.vue' // Father.vue 在 src 根目录
 import { ref } from 'vue'
 
 // 数据定义
