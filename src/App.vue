@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- 显示响应式数据 -->
+    <!-- 原来的内容 -->
     {{ msg }}
     <br>
     {{ day + 1 }}
@@ -24,7 +24,6 @@
     <a :href="url" target="_blank">知网</a>
 
     <button v-on:click="hello">hello</button>
-    <!-- 语法糖 -->
     <button @click="hello">hello</button>
 
     <hr>
@@ -35,16 +34,20 @@
     <!-- 新增：父子组件通信示例 -->
     <hr>
     <Father />
+
+    <!-- 新增：Element Plus 示例 -->
+    <hr>
+    <ElementPlusDemo />
   </div>
 </template>
 
 <script setup>
 import Son1 from '@/components/Son1.vue'
 import Son2 from '@/components/Son2.vue'
-import Father from '@/Father.vue' // Father.vue 在 src 根目录
+import Father from '@/Father.vue'
+import ElementPlusDemo from '@/components/ElementPlusDemo.vue'
 import { ref } from 'vue'
 
-// 数据定义
 const msg = 'Hello World!'
 const day = 30
 const b = false
@@ -52,15 +55,11 @@ const msg2 = '倒过来读的是猪'
 const msg3 = '<h1>Hello World!</h1>'
 const url = 'https://www.cnki.net/'
 
-// 方法定义
 function hello() {
   console.log('Hello')
 }
 
-// 响应式变量
 const schoolName = ref('河南理工大学')
-
-// 定时器相关
 let intervalValue = 0
 
 function start() {
@@ -78,7 +77,6 @@ function stop() {
 </script>
 
 <style scoped>
-/* 可选样式 */
 button {
   margin: 5px;
   padding: 8px 16px;
